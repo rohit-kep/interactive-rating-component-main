@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root{
+
+        --LightDarkBlue:hsl(215, 21%, 23%);
+        --Orange: hsl(25, 97%, 53%);
+          --White: hsl(0, 0%, 100%);
+          --LightGrey: hsl(217, 12%, 63%);
+          --MediumGrey: hsl(216, 12%, 54%);
+          --DarkBlue: hsl(213, 19%, 18%);
+          --VeryDarkBlue: hsl(216, 12%, 8%);
+      }
+      html{
+        background:var(--VeryDarkBlue);
+        font-family: sans-serif;
+      }
+      body{
+        max-width: 1440px;
+        min-height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .container{
+        width: 415px;
+        border-radius: 2em;
+        padding:1.9em;
+        background:var(--DarkBlue);
+      
+      }
+      .indicator{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 2.1em;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: hsl(214, 20%, 32%);
+      }   
+      .container h1{
+        color:var(--White);
+        font-size: 1.5em;
+        font-weight:600;
+        margin-bottom: 1.4rem;
+      } 
+      .container p{
+        color:var(--MediumGrey);
+        font-size: .9em;
+        line-height: 1.4rem;
+      }
+
+      #rating{
+        margin: 2rem 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      #rating p{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background:var(--LightDarkBlue);
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+      }
+      #rating p:hover{
+       background: var(--MediumGrey);
+       color:var(--LightGrey);
+      }
+      button{
+        width: 100%;
+        font-size: .9em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        padding: 1em 0;
+        border:none;
+        border-radius: 1.6em;
+        color:var(--Orange);
+        background-color:hsl(24, 100%, 96%);
+        cursor:pointer;
+      }
+      button:hover{
+        color:var(--White);
+        background-color: var(--Orange);
+      }
+/* thanx state */
+      .container:nth-of-type(2){
+        
+        padding:1.9em 1.4em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        display: none;
+      }
+      .container:nth-of-type(2) img{
+        margin-top:.8em;
+      }
+      #ratingDialog{
+        padding:.2em 1em;
+        border-radius: 1em;
+        background: hsl(214, 20%, 32%);
+        color:var(--Orange);
+        margin:2.3em 0;
+      }
+      h2{
+        color:var(--White);
+        font-size: 1.5em;
+        font-weight:600;
+        margin-bottom: 1.4rem;
+      }
+      .container:nth-of-type(2) p{
+        padding-bottom:2em;
+        text-align: center;
+      }
+      @media  only screen and (max-width: 415px) {
+         .container{
+          width: 100%;
+         }
+      }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+   <span class="indicator"> <img src="./images/icon-star.svg" alt=""></span>
+
+   <h1>How did we do?</h1> 
+
+<p>Please let us know how we did with your support request. All feedback is appreciated 
+  to help us improve our offering!</p>
+
+  <div id="rating">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+  </div>
+  
+  <button id="submit">Submit</button>
+</div>
+  
+
+  <div class="container">
+    <img  src="./images/illustration-thank-you.svg" alt="thanx">
+    <p id="ratingDialog">You selected out of 5</p>
+
+ <h2>Thank you!</h2>
+
+  <p> We appreciate you taking the time to give a rating. If you ever need more support, 
+  don’t hesitate to get in touch!</p>
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
